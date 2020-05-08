@@ -1,5 +1,6 @@
 # roman2nepali / latin2nepali -- Romanized to nepali unicode characters.
-## Please note that this is work in progress.
+
+# Demo:  manojacharya.com/nepali
 
 # Why ?
 Only few years ago we used custom mapped fonts for writing in different language. This method  
@@ -23,6 +24,8 @@ However, Google discontinued supoort to their API a few year aog. Fear not, I fo
 of google's API https://github.com/KSubedi/transliteration-input-tools/tree/master/src
 
 
+
+# Please note that this is a work in progress.
 
 # TODO: 
 
