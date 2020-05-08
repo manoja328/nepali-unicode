@@ -22,7 +22,18 @@ and maintains a custom dictionary for new or uncommon words and names. It also g
 However, Google discontinued supoort to their API a few year aog. Fear not, I found  a repo that re-wrote some portions 
 of google's API https://github.com/KSubedi/transliteration-input-tools/tree/master/src
 
+
+
+# TODO: 
+
+1. Fuzzy options during typing.
+3. Make a better UI. :smile:
+3. Add better grammar decisions.
+4. Add more edge cases.
+5. Learn collaboratively using a simple ML.  Show the most frequent options.
+
 # Resources: 
+
 1. https://en.wikipedia.org/wiki/Devanagari_transliteration
 
 2. https://github.com/libindic/Transliteration/blob/master/libindic/transliteration/core.py
