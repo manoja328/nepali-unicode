@@ -19,8 +19,8 @@ means source and the destination have same meaning. It requires higher lever of 
 
 There are other tools such as Google Input Tools https://www.google.com/inputtools/try/ . It  remembers your corrections 
 and maintains a custom dictionary for new or uncommon words and names. It also generate possible corrections as options.
-However, Google discontinued supoort to their API. Fear not, this guys has written to make it easiier to use google's API
-https://github.com/KSubedi/transliteration-input-tools/tree/master/src
+However, Google discontinued supoort to their API a few year aog. Fear not, I found  a repo that re-wrote some portions 
+of google's API https://github.com/KSubedi/transliteration-input-tools/tree/master/src
 
 # Resources: 
 1. https://en.wikipedia.org/wiki/Devanagari_transliteration
