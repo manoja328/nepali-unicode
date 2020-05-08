@@ -1,6 +1,6 @@
 # roman2nepali / latin2nepali -- Romanized to nepali unicode characters.
 
-# Demo:  manojacharya.com/nepali
+# Demo: https://www.manojacharya.com/nepali/
 
 # Why ?
 Only few years ago we used custom mapped fonts for writing in different language. This method  
