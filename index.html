@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nepali Typing</title>
+  <style>
+    .wrapper {
+      margin: 0 auto;
+      width: 300px;
+    }
+  textarea {
+      font-size: 140%;
+  }
+
+
+
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="convert.js"></script>
+</head>
+
+<body>
+  <script>
+  console.log("started ....");
+
+
+
+  function showoptions(convert) {
+
+
+    $('.convert-options').html(convert);
+
+  }
+
+  function getoptions(c){
+
+
+      var output = '';
+
+    if (c == undefined) {
+
+      return output;
+
+    }
+
+
+    for (var key in  charmap) {
+      
+      if (key[0].toLowerCase() == c.toLowerCase()){
+        output += key +":" + charmap[key] +" ";
+      }
+    }   
+
+  return output;
+
+
+  }
+
+
+var vowels = {'a':1, 'e':2 ,'i':3 , 'o':4 ,'u':5};
+
+
+function get_vowelpos(text){
+  var decode_array = [];
+
+  for (var w = 0; w < text.length; w++) {
+    if (text[w] in vowels){
+
+      if ( (w-1) == decode_array[decode_array.length -1]  ) { decode_array.pop();} // if two vowels together eg. aama 
+
+      decode_array.push(w);
+    }    
+  }
+
+return decode_array;
+
+
+}
+
+
+function decode(text){
+
+  if ( ! (text[text.length - 1] in vowels)) {
+
+    text = text + 'a';
+
+  }
+
+
+var vowel_pos = get_vowelpos(text);
+var output = '';
+var validpos = 0;
+for (var i = 0; i < vowel_pos.length; i++) {
+  var letter = text.slice(validpos, vowel_pos[i]+ 1 );
+  if (letter in charmap){
+    output += charmap[letter];
+  }
+
+ else { // eg. kranti .. still need to handle two words combo
+    var half_letter = text[validpos];
+    output += pure[half_letter];
+    var nextletter = text.slice(validpos+1, vowel_pos[i]+ 1 );
+    output +=charmap[nextletter];
+ }
+
+     validpos = vowel_pos[i] + 1;
+
+
+
+}
+
+
+// console.log("words: ", output);
+
+return output;
+
+
+}
+
+
+
+
+
+
+
+
+
+// function decode(text){
+
+
+
+//   var decode_array = [];
+
+//   var validpos = 0;
+
+//   var output = '';
+//   for (var w = 0; w < text.length; w++) {
+//     var letter = text.slice(validpos,w+1);
+//     if (letter in charmap){
+//       output += charmap[letter];
+//       validpos = w+1;
+//       decode_array.push(charmap[letter])
+//       console.log(validpos);
+//     }
+        
+//   }
+
+
+// console.log("words: ", decode_array.join(""));
+
+
+// }
+
+
+
+
+
+    $('body').on('input', '.input-preeti', function (event) {
+      var fulltext = this.value;
+      var words = fulltext.split(' ');
+      var lastWord = words[words.length - 1];
+      var last_letter = fulltext[fulltext.length -1];
+      var options = getoptions(last_letter);
+      var convert =  '';
+      for (var w = 0; w < words.length; w++) {
+           if (words[w] != ""){
+              convert += " " + decode(words[w]);         
+           }
+        }
+
+      $('.convert-unicode').val(convert);
+      
+      // showoptions(options);
+      return true;
+    });
+
+
+
+
+
+
+  </script> 
+</body>
+
+
+  <div class="wrapper" style="width: 300px;"> 
+
+    <div>
+      <label>Traditional Roman Typing</label>
+      <textarea  class="input-preeti" cols="50" rows="10"></textarea>
+    </div>
+
+
+<select id="sel_dropdown" style="float:left;">
+    <option value="text1">text1</option>
+    <option value="text2">text2</option>
+    <option value="text3">text3</option>
+    <option value="text4">text4</option>
+    <option value="text5">text1</option>
+    <option value="text6">text2</option>
+</select>
+
+
+    <div>
+      <label>Options:</label>
+      <label class="convert-options"> </label>
+  </div>
+
+    <br>
+    <div>
+      <label>Nepali Unicode Output</label>
+      <textarea  class="convert-unicode" cols="50" rows="5"></textarea>
+    </div>
+
+
+  </div>
+
+
+</html>
