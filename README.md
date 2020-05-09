@@ -20,11 +20,9 @@ means input and the output have same meaning. It requires higher level of unders
 
 There are other tools such as Google Input Tools https://www.google.com/inputtools/try/ for transliteration. It  has more
 features like it remembers your corrections and maintains a custom dictionary for new or uncommon words and names. 
-It also generate possible corrections as options.
-However, Google discontinued supoort to their API a few year aog. Fear not, I found  a repo that re-wrote some portions 
+It also generate alternate corrections as options.
+However, google discontinued supoort to this API. I found  a repo that re-wrote some portions 
 of google's API https://github.com/KSubedi/transliteration-input-tools/tree/master/src
-
-
 
 # Please note that this is a work in progress.
 
