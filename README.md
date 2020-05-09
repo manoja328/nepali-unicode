@@ -30,9 +30,9 @@ of google's API https://github.com/KSubedi/transliteration-input-tools/tree/mast
 
 1. Fuzzy options during typing.
 3. Make a better UI. :smile:
-3. Add better grammar decisions.
+3. Add better grammar support.
 4. Add more edge cases.
-5. Learn collaboratively using a simple ML.  Show the most frequent options.
+5. Learn collaboratively using a simple ML.  Show the most frequent choosen transliterations.
 
 # Resources: 
 
