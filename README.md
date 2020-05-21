@@ -1,5 +1,4 @@
-# Nepali to unicode , Phoenotic translation of English to Nepali 
-# roman2nepali / latin2nepali -- Romanized to nepali unicode characters.
+# roman to nepali unicode converter , Phoenotic translation of English to Nepali Unicode characters 
 
 # Demo: https://www.manojacharya.com/nepali/
 
